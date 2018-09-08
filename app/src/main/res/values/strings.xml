@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Design Tools</string>
+    <string name="dp">dp</string>
+    <string name="px">px</string>
+    <string name="px_value">%1$spx</string>
+    <string name="screen_width">Width:</string>
+    <string name="screen_height">Height:</string>
+    <string name="screen_information">Screen information</string>
+</resources>
