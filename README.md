@@ -9,7 +9,7 @@ Common design tools.
 Screenshots
 -----------
 
-![Main](/screenshots/main.png)
+![Screenshort1](/screenshots/screenshort1.png)
 
 License
 -------
