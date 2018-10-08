@@ -2,6 +2,7 @@ package com.tcqq.designtools
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Point
 import android.os.Build
 import android.view.WindowManager
@@ -11,7 +12,7 @@ import android.view.WindowManager
  * @author Alan Dreamer
  * @since 06/09/2018 Created
  */
-object Util {
+object Utils {
 
     /**
      * Value of px to value of dp.
@@ -65,5 +66,40 @@ object Util {
             wm.defaultDisplay.getSize(point)
         }
         return point.y
+    }
+
+    /**
+     * Return the status bar's height.
+     *
+     * @return the status bar's height
+     */
+    fun getStatusBarHeight(): Int {
+        val resources = Resources.getSystem()
+        val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
+        return resources.getDimensionPixelSize(resourceId)
+    }
+
+    /**
+     * Return the density of screen.
+     *
+     * @return the density of screen
+     */
+    fun getScreenDensity(): Float {
+        return Resources.getSystem().displayMetrics.density
+    }
+
+    /**
+     * Return the navigation bar's height.
+     *
+     * @return the navigation bar's height
+     */
+    fun getNavBarHeight(): Int {
+        val res = Resources.getSystem()
+        val resourceId = res.getIdentifier("navigation_bar_height", "dimen", "android")
+        return if (resourceId != 0) {
+            res.getDimensionPixelSize(resourceId)
+        } else {
+            0
+        }
     }
 }

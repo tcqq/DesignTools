@@ -5,11 +5,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-
+import timber.log.Timber
 
 /**
- * Dp to PX and PX to DP.
- *
  * @author Alan Dreamer
  * @since 06/09/2018 Created
  */
@@ -19,13 +17,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        screen_width.text = getString(R.string.px_value, Util.getScreenWidth(this).toString())
-        screen_height.text = getString(R.string.px_value, Util.getScreenHeight(this).toString())
+        screen_width.text = getString(R.string.px_value, Utils.getScreenWidth(this).toString())
+        screen_height.text = getString(R.string.px_value, Utils.getScreenHeight(this).toString())
+        status_bar_height.text = getString(R.string.px_value, Utils.getStatusBarHeight().toString())
+        navigation_bar_height.text = getString(R.string.px_value, Utils.getNavBarHeight().toString())
 
-        val defaultDp = "dp: 0"
-        val defaultPx = "px: 0"
-        text_view_dp.text = defaultDp
-        text_view_px.text = defaultPx
+        val defaultDP = "dp: 0"
+        val defaultPX = "px: 0"
+        text_view_dp.text = defaultDP
+        text_view_px.text = defaultPX
+
+        Timber.i("Density: ${Utils.getScreenDensity()}")
 
         edit_text_px.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val dp = "dp: " + if (s.toString() != "") Util.px2dp(this@MainActivity, s.toString().toFloat()).toString() else "0"
+                val dp = "dp: " + if (s.toString() != "") Utils.px2dp(this@MainActivity, s.toString().toFloat()).toString() else "0"
                 text_view_dp.text = dp
             }
         })
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val px = "px: " + if (s.toString() != "") Util.dp2px(this@MainActivity, s.toString().toFloat()).toString() else "0"
+                val px = "px: " + if (s.toString() != "") Utils.dp2px(this@MainActivity, s.toString().toFloat()).toString() else "0"
                 text_view_px.text = px
             }
         })

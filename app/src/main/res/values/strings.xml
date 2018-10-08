@@ -2,8 +2,10 @@
     <string name="app_name">Design Tools</string>
     <string name="dp">dp</string>
     <string name="px">px</string>
-    <string name="px_value">%1$spx</string>
-    <string name="screen_width">Width:</string>
-    <string name="screen_height">Height:</string>
-    <string name="screen_information">Screen information</string>
+    <string name="px_value">%1$s px</string>
+    <string name="screen_width">Screen width:</string>
+    <string name="screen_height">Screen height:</string>
+    <string name="device_metrics">Device metrics</string>
+    <string name="status_bar_height">Status bar height:</string>
+    <string name="navigation_bar_height">Navigation bar height:</string>
 </resources>
