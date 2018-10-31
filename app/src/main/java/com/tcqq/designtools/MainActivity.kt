@@ -5,7 +5,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import timber.log.Timber
 
 /**
  * @author Alan Dreamer
@@ -19,15 +18,14 @@ class MainActivity : AppCompatActivity() {
 
         screen_width.text = getString(R.string.px_value, Utils.getScreenWidth(this).toString())
         screen_height.text = getString(R.string.px_value, Utils.getScreenHeight(this).toString())
-        status_bar_height.text = getString(R.string.px_value, Utils.getStatusBarHeight().toString())
+        status_bar_height.text = getString(R.string.px_value, Utils.getStatusBarHeight(this).toString())
         navigation_bar_height.text = getString(R.string.px_value, Utils.getNavBarHeight().toString())
 
         val defaultDP = "dp: 0"
         val defaultPX = "px: 0"
         text_view_dp.text = defaultDP
         text_view_px.text = defaultPX
-
-        Timber.i("Density: ${Utils.getScreenDensity()}")
+        screen_density_height.text = Utils.getScreenDensity().toString()
 
         edit_text_px.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {

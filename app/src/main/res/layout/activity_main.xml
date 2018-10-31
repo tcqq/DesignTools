@@ -78,15 +78,34 @@
                 tools:text="2560 px" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/screen_density_hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/density_width"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textColor="?attr/colorControlNormal"
+                app:layout_constraintStart_toStartOf="@+id/navigation_bar_height_hint"
+                app:layout_constraintTop_toBottomOf="@+id/screen_height" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/screen_density_height"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="?attr/textAppearanceBody1"
+                app:layout_constraintStart_toEndOf="@+id/screen_density_hint"
+                app:layout_constraintTop_toTopOf="@+id/screen_density_hint"
+                tools:text="3.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/status_bar_height_hint"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:text="@string/status_bar_height"
                 android:textAppearance="?attr/textAppearanceBody1"
                 android:textColor="?attr/colorControlNormal"
                 app:layout_constraintStart_toStartOf="@+id/screen_height_hint"
-                app:layout_constraintTop_toBottomOf="@+id/screen_height" />
+                app:layout_constraintTop_toBottomOf="@+id/screen_density_height" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/status_bar_height"

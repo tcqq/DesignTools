@@ -73,10 +73,18 @@ object Utils {
      *
      * @return the status bar's height
      */
-    fun getStatusBarHeight(): Int {
-        val resources = Resources.getSystem()
-        val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
-        return resources.getDimensionPixelSize(resourceId)
+    fun getStatusBarHeight(context: Context): Int {
+        try {
+            var result = 0
+            val resourceId = context.resources.getIdentifier("status_bar_height", "dimen", "android")
+            if (resourceId > 0) {
+                result = context.resources.getDimensionPixelSize(resourceId)
+            }
+            return result
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return 0
     }
 
     /**

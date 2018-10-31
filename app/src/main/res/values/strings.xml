@@ -3,6 +3,7 @@
     <string name="dp">dp</string>
     <string name="px">px</string>
     <string name="px_value">%1$s px</string>
+    <string name="density_width">Screen density:</string>
     <string name="screen_width">Screen width:</string>
     <string name="screen_height">Screen height:</string>
     <string name="device_metrics">Device metrics</string>
