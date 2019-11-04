@@ -4,7 +4,7 @@ import android.app.Application
 import timber.log.Timber
 
 /**
- * @author Alan Dreamer
+ * @author Alan Perry
  * @since 07/09/2018 Created
  */
 class App: Application() {
