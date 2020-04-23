@@ -7,7 +7,7 @@ import android.view.View
 import android.view.WindowManager
 
 /**
- * @author Alan Perry
+ * @author Perry Lance
  * @since 19/09/2018 Created
  */
 object BarUtils {

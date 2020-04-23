@@ -9,7 +9,7 @@ import android.view.WindowManager
 
 
 /**
- * @author Alan Perry
+ * @author Perry Lance
  * @since 06/09/2018 Created
  */
 object Utils {

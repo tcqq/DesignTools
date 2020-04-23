@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
- * @author Alan Perry
+ * @author Perry Lance
  * @since 06/09/2018 Created
  */
 class MainActivity : AppCompatActivity() {
